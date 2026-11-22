@@ -22,16 +22,19 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="fixed left-0 top-0 z-40 w-full"
+      className="fixed inset-x-0 top-0 z-40 w-full"
       style={{
         padding: '14px 16px',
         boxSizing: 'border-box',
       }}
     >
       <nav
-        className="relative mx-auto flex w-full items-center justify-between rounded-2xl border border-white/70 bg-white/80 shadow-lg backdrop-blur-xl"
+        className="relative flex w-full items-center justify-between rounded-2xl border border-white/70 bg-white/80 shadow-lg backdrop-blur-xl"
         style={{
-          maxWidth: '1150px',
+          width: '100%',
+          maxWidth: '1500px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
           padding: '10px 14px',
           boxSizing: 'border-box',
         }}
@@ -48,7 +51,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop navigation */}
-        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-3 lg:flex xl:gap-5">
+        <div className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex xl:gap-5">
           {navLinks
             .filter((link) => link.name !== 'Contact')
             .map((link) => (
@@ -67,7 +70,7 @@ export default function Navbar() {
         {/* Desktop contact button */}
         <a
           href="#contact"
-          className="ml-auto hidden h-[44px] w-[125px] shrink-0 items-center justify-center rounded-full bg-[#243B32] text-sm font-semibold transition-all hover:scale-105 hover:bg-[#526F60] lg:flex"
+          className="hidden h-[44px] w-[125px] shrink-0 items-center justify-center rounded-full bg-[#243B32] text-sm font-semibold transition-all hover:scale-105 hover:bg-[#526F60] lg:flex"
           style={{ color: '#FFFFFF' }}
         >
           Let's Talk
@@ -97,7 +100,10 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="mx-auto mt-3 w-full rounded-2xl border border-white/70 bg-[#FAF7F2]/95 shadow-xl backdrop-blur-xl lg:hidden"
             style={{
-              maxWidth: '1150px',
+              width: '100%',
+              maxWidth: '1500px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
               padding: '14px',
               maxHeight: 'calc(100dvh - 110px)',
               overflowY: 'auto',
